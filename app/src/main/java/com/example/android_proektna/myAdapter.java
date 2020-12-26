@@ -1,6 +1,7 @@
 package com.example.android_proektna;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,11 +11,14 @@ import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.android_proektna.models.City;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class myAdapter extends RecyclerView.Adapter<com.example.android_proektna.myAdapter.ViewHolder> {
 
-    private List<String> myList;
+    private List<City> myList;
     private int rowLayout;
     private Context mContext;
 
@@ -32,7 +36,7 @@ public class myAdapter extends RecyclerView.Adapter<com.example.android_proektna
     }
 
     // конструктор
-    public myAdapter(List<String> myList, int rowLayout, Context context) {
+    public myAdapter(ArrayList<City> myList, int rowLayout, Context context) {
         this.myList = myList;
         this.rowLayout = rowLayout;
         this.mContext = context;
@@ -48,13 +52,15 @@ public class myAdapter extends RecyclerView.Adapter<com.example.android_proektna
     // Замена на содржината во view (повикано од layout manager)
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, int i) {
-        String entry = myList.get(i);
-        viewHolder.myName.setText(entry);
+        City entry = myList.get(i);
+        viewHolder.Pic.setImageResource(entry.getImage());
+        viewHolder.myName.setText(entry.getName());
         viewHolder.myName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TextView tv = (TextView) v;
-                Toast.makeText(mContext, tv.getText(), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(mContext, RegisterFormActivity.class);
+                intent.putExtra("city", myList.get(i));
+                mContext.startActivity(intent);
             }
         });
     }

@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -36,7 +37,7 @@ public class SignUp extends AppCompatActivity {
         loginDataBaseAdapter=loginDataBaseAdapter.open();
         et_first_name = (EditText) findViewById(R.id.tFirstName);
         et_last_name = (EditText) findViewById(R.id.tLastName);
-        et_ID = (EditText) findViewById(R.id.tEmail);
+        et_ID = (EditText) findViewById(R.id.tUserName);
         et_password = (EditText) findViewById(R.id.tPassword);
 
 
@@ -48,16 +49,15 @@ public class SignUp extends AppCompatActivity {
         firstName = et_first_name.getText().toString();
         lastName = et_last_name.getText().toString();
         userName = et_ID.getText().toString();
-        password = et_ID.getText().toString();
+        password = et_password.getText().toString();
         if((firstName.equals(""))||(lastName.equals(""))||(userName.equals(""))||(password.equals("")))
         {
             //Display Message
             AlertDialog alertDialog = new AlertDialog.Builder(this).create();
-            alertDialog.setTitle("ALERT!");
-            alertDialog.setMessage("All fields must be filled");
+            alertDialog.setTitle("Please fill out all the fields!");
             alertDialog.setButton("OK", new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int which) {
-
+                alertDialog.hide();
                 }
             });
             alertDialog.show();
@@ -67,18 +67,7 @@ public class SignUp extends AppCompatActivity {
 
             // Save the Data in Database
             receieveOk=loginDataBaseAdapter.insertEntry(firstName,lastName,userName, password);
-
-            AlertDialog alertDialog = new AlertDialog.Builder(this).create();
-            alertDialog.setTitle("SUCCESSFUL!");
-            alertDialog.setMessage("SIGN IN NOW " + receieveOk);
-            alertDialog.setButton("OK", new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int which) {
-
-                    Intent intent = new Intent(SignUp.this, MainActivity.class);
-                    startActivity(intent);
-                }
-            });
-            alertDialog.show();
+            Toast.makeText(context, "Successfully created profile", Toast.LENGTH_LONG).show();
             finish();
         }
 

@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
@@ -31,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
 
         etUserEmail = (EditText) findViewById(R.id.Email);
         etPassword = (EditText) findViewById(R.id.Password);
-
     }
 
     public void SignIN(View view) {
@@ -44,8 +44,8 @@ public class MainActivity extends AppCompatActivity {
 
             if (username.equals("") || password.equals("")) {
                 AlertDialog alertDialog = new AlertDialog.Builder(this).create();
-                alertDialog.setTitle("ALERT!");
-                alertDialog.setMessage("Fill All Fields");
+                alertDialog.setTitle("Error!");
+                alertDialog.setMessage("Please fill all fields");
                 alertDialog.setButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                     }
@@ -66,8 +66,8 @@ public class MainActivity extends AppCompatActivity {
                 else
                 {
                     AlertDialog alertDialog = new AlertDialog.Builder(this).create();
-                    alertDialog.setTitle("ALERT!");
-                    alertDialog.setMessage("Incorrect Username OR Password");
+                    alertDialog.setTitle("Error!");
+                    alertDialog.setMessage("Incorrect username or password");
                     alertDialog.setButton("OK", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
                         }
@@ -80,12 +80,7 @@ public class MainActivity extends AppCompatActivity {
         {
             Log.e("Error", "error login");
         }
-
     }
-
-
-
-
     public void SignUP(View view)
     {
         Intent intent = new Intent(MainActivity.this, SignUp.class);

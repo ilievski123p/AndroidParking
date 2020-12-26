@@ -25,7 +25,7 @@ public class LoginDatabaseAdapter {
     public static final int NAME_COLUMN = 1;
     // TODO: Create public field for each column in your table.
     // SQL Statement to create a new database.
-    static final String DATABASE_CREATE = "create table LOGIN( ID integer primary key autoincrement,FIRSTNAME  text,LASTNAME  text,USERNAME text,PASSWORD text); ";
+    static final String DATABASE_CREATE = "create table LOGIN( ID integer primary key autoincrement,FIRSTNAME  text,LASTNAME  text,USERNAME text,PASSWORD text,EMAIL text); ";
 
 
     // Variable to hold the database instance
@@ -59,7 +59,7 @@ public class LoginDatabaseAdapter {
     }
 
     // method to insert a record in Table
-    public String insertEntry(String firstName,String lastName,String Id,String password)
+    public String insertEntry(String firstName, String lastName, String Id, String password)
     {
 
         try {
@@ -71,12 +71,11 @@ public class LoginDatabaseAdapter {
             newValues.put("USERNAME", Id);
             newValues.put("PASSWORD", password);
 
-
             // Insert the row into your table
             db = dbHelper.getWritableDatabase();
             long result=db.insert("LOGIN", null, newValues);
             System.out.print(result);
-            Toast.makeText(context, "User Info Saved", Toast.LENGTH_LONG).show();
+            Toast.makeText(context, "Successfully created profile", Toast.LENGTH_LONG).show();
 
 
         }catch(Exception ex) {

@@ -15,20 +15,21 @@
         <ImageView
             android:id="@+id/picture"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:alpha="0.3"
+            android:layout_height="100dp"
             android:layout_centerInParent="true"
             android:scaleType="centerCrop"/>
 
         <TextView
             android:id="@+id/Name"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="100dp"
+            android:background="?android:selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
             android:gravity="center"
-            android:layout_centerHorizontal="true"
-            android:textColor="@color/blue"
-            android:layout_centerVertical="true"
-            android:textStyle="bold"
+            android:layout_alignParentLeft="true"
+            android:textColor="@android:color/black"
             android:textSize="24sp"/>
+
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

@@ -1,51 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <DatePicker
-        android:id="@+id/simpleDatePicker"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:calendarViewShown="false"
-        android:datePickerMode="spinner"/>
+        android:orientation="vertical"
+        tools:context=".RegisterFormActivity">
+        <fragment
+            android:id="@+id/fragment_2"
+            android:name="com.example.android_proektna.ReservationFragment2"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            tools:layout="@layout/fragment_reservation_form_1" />
 
-    <Spinner
-        android:layout_below="@+id/simpleDatePicker"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/from_spinner"
-        android:layout_width="wrap_content"
-        android:layout_marginTop="25dp"
-        android:layout_height="wrap_content"
-        android:gravity="center|top"
-        android:layout_alignParentLeft="true"
-        android:layout_gravity="center|top"
-        android:entries="@array/hour"
-        android:prompt="@string/from"
-        android:spinnerMode="dialog"/>
-    <Spinner
-        android:layout_below="@+id/simpleDatePicker"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/to_spinner"
-        android:layout_alignParentRight="true"
-        android:layout_width="wrap_content"
-        android:layout_marginTop="25dp"
-        android:layout_height="wrap_content"
-        android:gravity="center|top"
-        android:layout_gravity="center|top"
-        android:entries="@array/hour"
-        android:prompt="@string/to"
-        android:spinnerMode="dialog"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_below="@+id/to_spinner"
-        android:text="Make a Reservation"
-        android:onClick="onClick"
-        android:layout_centerHorizontal="true"
-        android:gravity="center"
-        />
-</RelativeLayout>
+        <fragment
+            android:id="@+id/fragment_1"
+            android:name="com.example.android_proektna.ReservationFragment1"
+            android:layout_width="match_parent"
+            android:layout_height="480dp"
+            tools:layout="@layout/fragment_reservation_form_2" />
+
+    </LinearLayout>
+</ScrollView>
