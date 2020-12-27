@@ -1,1 +1,1 @@
-"# AndroidParking" 
+Android Application for parking reservation
