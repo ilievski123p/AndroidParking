@@ -9,6 +9,9 @@
         android:layout_below="@+id/textView2"
         android:id="@+id/chosen_date_parking"
         android:layout_width="wrap_content"
+        android:text="@string/all_of_your_reservations"
+        android:textColor="@color/blue"
+        android:textSize="25sp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"/>
 
@@ -19,6 +22,6 @@
         android:layout_height="match_parent"
         android:layout_marginTop="30dp"
         android:padding="4dp"
-        android:layout_below="@+id/chosen_date_parking"/>
+        android:layout_below="@+id/textView2"/>
 
 </RelativeLayout>

@@ -60,9 +60,7 @@ public class ParkingPlaceAdapter extends RecyclerView.Adapter<ParkingPlaceAdapte
         Parking entry = myList.get(position);
         holder.mName.setText(entry.getParkingName());
         String taken = String.valueOf(entry.getTakenPlaces());
-        taken = taken;
         String free = String.valueOf(entry.getFreePlaces());
-        free = free;
         holder.takenPlaces.setText(taken);
         holder.freePlaces.setText(free);
 

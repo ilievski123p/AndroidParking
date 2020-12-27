@@ -12,45 +12,24 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/city_name"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:id="@+id/c_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:background="?android:selectableItemBackground"
-            android:clickable="true"
-            android:focusable="true"
-            android:padding="10dp"
-            android:textSize="24sp" />
+            android:layout_centerVertical="true"
+            android:textSize="15sp"
+            android:textColor="@color/blue"
+            android:padding="10dp"/>
         <TextView
-            android:id="@+id/parking_name"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:id="@+id/park_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textSize="15sp"
+            android:textColor="@color/blue"
             android:background="?android:selectableItemBackground"
-            android:clickable="true"
-            android:layout_below="@+id/city_name"
-            android:focusable="true"
-            android:padding="10dp"
-            android:textSize="24sp" />
-        <TextView
-            android:id="@+id/hour"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:background="?android:selectableItemBackground"
-            android:clickable="true"
-            android:layout_below="@+id/city_name"
-            android:focusable="true"
-            android:padding="10dp"
-            android:textSize="24sp" />
-        <TextView
-            android:id="@+id/date"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:background="?android:selectableItemBackground"
-            android:clickable="true"
-            android:layout_below="@+id/city_name"
-            android:focusable="true"
-            android:padding="10dp"
-            android:textSize="24sp" />
-
+            android:layout_alignParentRight="true"
+            android:padding="10dp"/>
 
 
     </RelativeLayout>

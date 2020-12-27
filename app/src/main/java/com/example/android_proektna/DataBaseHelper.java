@@ -142,8 +142,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public ArrayList<Reservation> getReservations(){
         SQLiteDatabase db = this.getReadableDatabase();
         ArrayList<Reservation> reservation = new ArrayList<Reservation>();
-        String query = String.format("SELECT * FROM myReservations");
-        Cursor cursor = db.rawQuery(query, null);
+        Cursor cursor = db.query("myReservations", null, null,
+                null, null, null, "ID" + " DESC", null);
         int i=0;
         if (cursor != null && cursor.moveToFirst()) {
             do {

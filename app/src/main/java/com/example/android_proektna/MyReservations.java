@@ -24,20 +24,6 @@ public class MyReservations extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.my_reservation);
-        dateText = (TextView) findViewById(R.id.chosen_date_parking);
-        Intent incoming = getIntent();
-        City city = incoming.getParcelableExtra("city");
-        int day = incoming.getIntExtra("day", 0);
-        int month = incoming.getIntExtra("month", 0);
-        int year = incoming.getIntExtra("year", 0);
-        String hours = incoming.getStringExtra("hours");
-        String date = day + "/" + month + "/" + year;
-        assert city != null;
-        String city_name = city.getName();
-        hours = hours;
-        date =date + " - " + hours + " in " + city_name;
-        dateText.setText(date);
-
         ArrayList<Reservation> myReservations = new ArrayList<Reservation>();
         DataBaseHelper handler = new DataBaseHelper(MyReservations.this);
         myReservations = handler.getReservations();
@@ -46,7 +32,7 @@ public class MyReservations extends AppCompatActivity {
 
         // оваа карактеристика може да се користи ако се знае дека промените
         // во содржината нема да ја сменат layout големината на RecyclerView
-        mRecyclerView.setHasFixedSize(true);
+//        mRecyclerView.setHasFixedSize(true);
 
         // ќе користиме LinearLayoutManager
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -61,18 +47,5 @@ public class MyReservations extends AppCompatActivity {
         mRecyclerView.setAdapter(mAdapter);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu)
-    {
-        getMenuInflater().inflate(R.menu.my_menu,menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item)
-    {
-        Intent intent = new Intent(this, MyReservations.class);
-        startActivity(intent);
-        return true;
-    }
 
 }

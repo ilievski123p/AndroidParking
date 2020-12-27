@@ -25,17 +25,15 @@ public class MyReservationAdapter extends RecyclerView.Adapter<MyReservationAdap
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
-        public TextView mName;
-        public TextView cName;
-        public TextView hour;
-        public TextView date;
+        private TextView mName;
+        private TextView cName;
+        private TextView hour;
+        private TextView date;
 
         public ViewHolder( View itemView) {
             super(itemView);
-            mName = (TextView) itemView.findViewById(R.id.parking_name);
-            cName = (TextView) itemView.findViewById(R.id.city_name);
-            hour = (TextView) itemView.findViewById(R.id.hour);
-            date = (TextView) itemView.findViewById(R.id.date);
+            mName = (TextView) itemView.findViewById(R.id.park_name);
+            cName = (TextView) itemView.findViewById(R.id.c_name);
         }
     }
 
@@ -57,9 +55,6 @@ public class MyReservationAdapter extends RecyclerView.Adapter<MyReservationAdap
         Reservation entry = myList.get(position);
         holder.mName.setText(entry.getParkingName());
         holder.cName.setText(entry.getCityName());
-        holder.hour.setText(" ");
-        holder.date.setText(" ");
-
     }
 
     @Override

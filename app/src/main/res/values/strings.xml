@@ -21,6 +21,7 @@
     <string name="reserve">Reserve</string>
     <string name="your_reservations">You can see all of your reservations by tapping the button in your top right corner!</string>
     <string name="download_qr_code">Download QR Code</string>
+    <string name="all_of_your_reservations">All of your Reservations:</string>
     <string-array name="hours">
         <item>00:00 – 01:00</item>
         <item>01:00 – 02:00</item>
