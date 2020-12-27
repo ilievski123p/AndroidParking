@@ -71,6 +71,8 @@ public class LoginDatabaseAdapter {
             newValues.put("LASTNAME", lastName);
             newValues.put("USERNAME", Id);
             newValues.put("PASSWORD", password);
+            newValues.put("EMAIL", Id);
+
 
             // Insert the row into your table
             db = dbHelper.getWritableDatabase();
