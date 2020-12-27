@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -34,7 +35,6 @@ public class ConfirmReservation extends AppCompatActivity {
         final String lng = parking.getLng();
 
         parkingName.setText(name);
-
         navigate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -27,6 +27,6 @@
         android:layout_centerHorizontal="true"
         android:layout_margin="20dp"
         android:layout_below="@id/spinner_fragment_1"
-        android:text="Make Reservation"/>
+        android:text="@string/make_reservation"/>
 
 </RelativeLayout>

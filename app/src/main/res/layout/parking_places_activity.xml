@@ -18,10 +18,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="Parking Reservation"
+        android:text="@string/parking_reservation"
         android:textStyle="bold"
-        android:textColor="@android:color/black"
-        android:textSize="35dp" />
+        android:textColor="@color/blue"
+        android:textSize="35sp" />
     <TextView
         android:layout_below="@+id/textView2"
         android:id="@+id/chosen_date_parking"

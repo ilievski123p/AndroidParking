@@ -2,6 +2,24 @@
     <string name="app_name">Parking Reservation</string>
     <string name="from">From:</string>
     <string name="to">To:</string>
+    <string name="cities_where_you_can_make_reservation">Cities where you can make reservation:</string>
+    <string name="success">Success!</string>
+    <string name="parking_reservation">Parking Reservation</string>
+    <string name="open_google_maps_for_navigation">Open Google Maps for navigation</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="create_a_free_account">Create a free account:</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="email">Email</string>
+    <string name="create_an_account">Create an account</string>
+    <string name="make_reservation">Make Reservation</string>
+    <string name="choose_time_and_date_for">Choose time and date for:</string>
+    <string name="photo">Photo</string>
+    <string name="reserve">Reserve</string>
+    <string name="your_reservations">You can see all of your reservations by tapping the button in your top right corner!</string>
     <string-array name="hours">
         <item>00:00 – 01:00</item>
         <item>01:00 – 02:00</item>

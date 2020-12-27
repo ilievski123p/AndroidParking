@@ -2,10 +2,9 @@ package com.example.android_proektna;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentActivity;
 
-import android.app.Fragment;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
@@ -33,7 +32,14 @@ public class RegisterFormActivity extends AppCompatActivity implements AdapterVi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.register_form_activity);
+        if (getResources().getConfiguration().orientation ==
+                Configuration.ORIENTATION_LANDSCAPE) {
+            setContentView(R.layout.register_form_activity);
+
+        } else {
+            setContentView(R.layout.register_form_activity);
+
+        }
 
         datePicker = (DatePicker) findViewById(R.id.date_widget_fragment_1);
         spinner = (Spinner) findViewById(R.id.spinner_fragment_1);
@@ -56,6 +62,7 @@ public class RegisterFormActivity extends AppCompatActivity implements AdapterVi
         textView.setText(name_resource);
 
         spinner.setOnItemSelectedListener(this);
+
 
         datePicker.setOnDateChangedListener(new DatePicker.OnDateChangedListener() {
             @Override

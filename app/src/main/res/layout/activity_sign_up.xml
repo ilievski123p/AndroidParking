@@ -18,8 +18,8 @@
         android:layout_below="@+id/logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Create a free account: "
-        android:textColor="@android:color/black"
+        android:text="@string/create_a_free_account"
+        android:textColor="@color/blue"
         android:textStyle="bold"
         android:textSize="25sp"
         android:layout_centerHorizontal="true"/>
@@ -33,7 +33,7 @@
         android:layout_marginTop="26dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="First Name" />
+        android:hint="@string/first_name" />
     <EditText
         android:id="@+id/tLastName"
         android:layout_width="match_parent"
@@ -43,7 +43,7 @@
         android:layout_below="@+id/tFirstName"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="Last Name" />
+        android:hint="@string/last_name" />
 
     <EditText
         android:id="@+id/tUserName"
@@ -51,7 +51,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="Email"
+        android:hint="@string/email"
         android:layout_below="@+id/tLastName"
         android:layout_alignLeft="@+id/tFirstName"
         android:layout_alignStart="@+id/tFirstName"/>
@@ -61,7 +61,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPassword"
-        android:hint="Password"
+        android:hint="@string/password"
         android:layout_below="@+id/tUserName" />
     <Button
         android:id="@+id/buttonOK"
@@ -71,5 +71,5 @@
         android:layout_marginTop="14dp"
         android:onClick="OK"
         android:layout_centerHorizontal="true"
-        android:text="Create an account" />
+        android:text="@string/create_an_account" />
 </RelativeLayout>

@@ -18,29 +18,32 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="Parking Reservation"
+        android:text="@string/parking_reservation"
         android:textStyle="bold"
-        android:textColor="@android:color/black"
-        android:textSize="35dp" />    <TextView
+        android:textColor="@color/blue"
+        android:textSize="35dp" />
+    <TextView
         android:id="@+id/success_message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:text="Success"/>
-
+        android:layout_below="@+id/textView2"
+        android:textStyle="bold"
+        android:textColor="@color/blue"
+        android:layout_marginTop="15dp"
+        android:textSize="25dp"
+        android:text="@string/success"/>
     <TextView
         android:id="@+id/chosen_parking_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Successfully reserved a parking space!"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/textView2"/>
+        android:layout_below="@+id/success_message"/>
     <Button
         android:id="@+id/button_navigate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Open Google Maps for navigation"
+        android:text="@string/open_google_maps_for_navigation"
         android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/chosen_parking_name"/>
