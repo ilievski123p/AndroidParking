@@ -9,6 +9,10 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.android_proektna.models.City;
+import com.example.android_proektna.models.Parking;
+
+import java.util.ArrayList;
+
 public class ParkingPlacesActivity extends AppCompatActivity {
     RecyclerView mRecyclerView;
     ParkingPlaceAdapter mAdapter;
@@ -28,10 +32,11 @@ public class ParkingPlacesActivity extends AppCompatActivity {
         int year = incoming.getIntExtra("year", 0);
         String hours = incoming.getStringExtra("hours");
         String date = day + "/" + month + "/" + year;
-
         assert city != null;
         String city_name = city.getName();
-
+        ArrayList<Parking> parkings = new ArrayList<>();
+        DataBaseHelper handler = new DataBaseHelper(ParkingPlacesActivity.this);
+        parkings = handler.getParkings(city_name);
         hours = hours;
         date =date + " - " + hours + " in " + city_name;
 
@@ -50,7 +55,7 @@ public class ParkingPlacesActivity extends AppCompatActivity {
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
         // сетирање на кориснички дефиниран адаптер myAdapter (посебна класа)
-        mAdapter = new ParkingPlaceAdapter(city.getParkings(), R.layout.parking_places_card_activity, this);
+         mAdapter = new ParkingPlaceAdapter(parkings, R.layout.parking_places_card_activity, this);
 
         //прикачување на адаптерот на RecyclerView
         mRecyclerView.setAdapter(mAdapter);

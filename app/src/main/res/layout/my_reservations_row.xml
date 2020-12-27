@@ -12,7 +12,7 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/parking_name"
+            android:id="@+id/city_name"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:background="?android:selectableItemBackground"
@@ -20,39 +20,37 @@
             android:focusable="true"
             android:padding="10dp"
             android:textSize="24sp" />
+        <TextView
+            android:id="@+id/parking_name"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="?android:selectableItemBackground"
+            android:clickable="true"
+            android:layout_below="@+id/city_name"
+            android:focusable="true"
+            android:padding="10dp"
+            android:textSize="24sp" />
+        <TextView
+            android:id="@+id/hour"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="?android:selectableItemBackground"
+            android:clickable="true"
+            android:layout_below="@+id/city_name"
+            android:focusable="true"
+            android:padding="10dp"
+            android:textSize="24sp" />
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="?android:selectableItemBackground"
+            android:clickable="true"
+            android:layout_below="@+id/city_name"
+            android:focusable="true"
+            android:padding="10dp"
+            android:textSize="24sp" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/free_places"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_alignBottom="@+id/parking_name"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
-            android:textColor="@color/white"
-            android:background="@drawable/roundedshapebtn"
-            android:clickable="false"/>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/taken_places"
-            android:layout_alignBottom="@+id/parking_name"
-            android:layout_margin="10dp"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:textColor="@color/white"
-            android:layout_toEndOf="@+id/free_places"
-            android:background="@drawable/roundeddanger"
-            android:clickable="false"/>
-
-
-        <Button
-            android:id="@+id/button_reserve"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignEnd="@+id/parking_name"
-            android:layout_alignRight="@+id/parking_name"
-            android:layout_margin="10dp"
-            android:text="@string/reserve" />
 
 
     </RelativeLayout>

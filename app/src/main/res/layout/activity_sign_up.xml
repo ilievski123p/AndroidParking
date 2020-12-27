@@ -51,7 +51,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="@string/email"
+        android:hint="@string/username"
         android:layout_below="@+id/tLastName"
         android:layout_alignLeft="@+id/tFirstName"
         android:layout_alignStart="@+id/tFirstName"/>

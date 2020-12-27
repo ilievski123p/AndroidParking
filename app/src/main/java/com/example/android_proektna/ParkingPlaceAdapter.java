@@ -1,5 +1,6 @@
 package com.example.android_proektna;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -7,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,6 +17,8 @@ import com.example.android_proektna.models.City;
 import com.example.android_proektna.models.Parking;
 
 import java.util.ArrayList;
+
+import static com.example.android_proektna.LoginDatabaseAdapter.db;
 
 public class ParkingPlaceAdapter extends RecyclerView.Adapter<ParkingPlaceAdapter.ViewHolder>{
 
@@ -66,6 +70,23 @@ public class ParkingPlaceAdapter extends RecyclerView.Adapter<ParkingPlaceAdapte
         holder.buttonReserve.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                Context context = mContext;
+                DataBaseHelper dbHelper = new DataBaseHelper(context);
+                ContentValues newValues = new ContentValues();
+                // Assign values for each column.
+                //newValues.put("UserName",entry.)
+                newValues.put("CityName", entry.getCityName());
+                newValues.put("ParkingName", entry.getParkingName());
+                newValues.put("Hour", " ");
+                newValues.put("Date", " ");
+
+                // Insert the row into your table
+                db = dbHelper.getWritableDatabase();
+                long result=db.insert("myReservations", null, newValues);
+                System.out.print(result);
+                Toast.makeText(context, "Successfully Reserved", Toast.LENGTH_LONG).show();
+
                 Intent intent = new Intent(mContext, ConfirmReservation.class);
                 intent.putExtra("parking", myList.get(position));
                 mContext.startActivity(intent);

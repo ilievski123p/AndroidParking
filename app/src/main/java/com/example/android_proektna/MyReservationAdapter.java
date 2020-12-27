@@ -13,33 +13,34 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.android_proektna.models.City;
 import com.example.android_proektna.models.Parking;
+import com.example.android_proektna.models.Reservation;
 
 import java.util.ArrayList;
 
 public class MyReservationAdapter extends RecyclerView.Adapter<MyReservationAdapter.ViewHolder>{
 
-    private ArrayList<Parking> myList;
+    private ArrayList<Reservation> myList;
     private int rowLayout;
     private Context mContext;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
         public TextView mName;
-        public Button freePlaces;
-        public Button takenPlaces;
-        public Button buttonReserve;
+        public TextView cName;
+        public TextView hour;
+        public TextView date;
 
         public ViewHolder( View itemView) {
             super(itemView);
             mName = (TextView) itemView.findViewById(R.id.parking_name);
-            freePlaces = (Button) itemView.findViewById(R.id.free_places);
-            takenPlaces = (Button) itemView.findViewById(R.id.taken_places);
-            buttonReserve = (Button) itemView.findViewById(R.id.button_reserve);
+            cName = (TextView) itemView.findViewById(R.id.city_name);
+            hour = (TextView) itemView.findViewById(R.id.hour);
+            date = (TextView) itemView.findViewById(R.id.date);
         }
     }
 
-    public MyReservationAdapter(ArrayList<Parking> parkingsList, int rowLayout, Context context) {
-        this.myList = parkingsList;
+    public MyReservationAdapter(ArrayList<Reservation> Reservations, int rowLayout, Context context) {
+        this.myList = Reservations;
         this.rowLayout = rowLayout;
         this.mContext = context;
     }
@@ -53,24 +54,12 @@ public class MyReservationAdapter extends RecyclerView.Adapter<MyReservationAdap
 
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
-        Parking entry = myList.get(position);
+        Reservation entry = myList.get(position);
         holder.mName.setText(entry.getParkingName());
-        String taken = String.valueOf(entry.getTakenPlaces());
-        taken = taken;
-        String free = String.valueOf(entry.getFreePlaces());
-        free = free;
-        holder.takenPlaces.setText(taken);
-        holder.freePlaces.setText(free);
+        holder.cName.setText(entry.getCityName());
+        holder.hour.setText(" ");
+        holder.date.setText(" ");
 
-
-        holder.buttonReserve.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(mContext, ConfirmReservation.class);
-                intent.putExtra("parking", myList.get(position));
-                mContext.startActivity(intent);
-            }
-        });
     }
 
     @Override

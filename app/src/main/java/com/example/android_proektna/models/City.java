@@ -3,14 +3,12 @@ package com.example.android_proektna.models;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import java.util.ArrayList;
-
 public class City implements Parcelable {
     private String mName;
     private int mImage;
-    private ArrayList<Parking> mParkings;
+    private String mParkings;
 
-    public City(String name, int image, ArrayList<Parking> parkings) {
+    public City(String name, int image, String parkings) {
         mName = name;
         mImage = image;
         mParkings = parkings;
@@ -20,7 +18,7 @@ public class City implements Parcelable {
     protected City(Parcel in) {
         mName = in.readString();
         mImage = in.readInt();
-        mParkings = in.createTypedArrayList(Parking.CREATOR);
+        mParkings = in.readString();
     }
 
     public static final Creator<City> CREATOR = new Creator<City>() {
@@ -43,7 +41,7 @@ public class City implements Parcelable {
         return mImage;
     }
 
-    public ArrayList<Parking> getParkings() { return mParkings; }
+    public String getParkings() { return mParkings; }
 
     @Override
     public int describeContents() {
@@ -54,7 +52,8 @@ public class City implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(mName);
         dest.writeInt(mImage);
-        dest.writeTypedList(mParkings);
+        dest.writeString(mParkings);
     }
+
 }
 

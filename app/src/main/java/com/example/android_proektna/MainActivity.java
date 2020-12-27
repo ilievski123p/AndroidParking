@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
                 // check if the Stored password matches with Password entered by user
                 if (password.equals(storedPassword)) {
                     Intent intent1 = new Intent(MainActivity.this, DisplayInfoActivity.class);
+                    intent1.putExtra("user",username);
                     startActivity(intent1);
                     // finish();
                 }
