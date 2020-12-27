@@ -25,15 +25,15 @@ public class ParkingPlaceAdapter extends RecyclerView.Adapter<ParkingPlaceAdapte
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
         public TextView mName;
-        public TextView freePlaces;
-        public TextView takenPlaces;
+        public Button freePlaces;
+        public Button takenPlaces;
         public Button buttonReserve;
 
         public ViewHolder( View itemView) {
             super(itemView);
             mName = (TextView) itemView.findViewById(R.id.parking_name);
-            freePlaces = (TextView) itemView.findViewById(R.id.free_places);
-            takenPlaces = (TextView) itemView.findViewById(R.id.taken_places);
+            freePlaces = (Button) itemView.findViewById(R.id.free_places);
+            takenPlaces = (Button) itemView.findViewById(R.id.taken_places);
             buttonReserve = (Button) itemView.findViewById(R.id.button_reserve);
         }
     }
@@ -56,9 +56,9 @@ public class ParkingPlaceAdapter extends RecyclerView.Adapter<ParkingPlaceAdapte
         Parking entry = myList.get(position);
         holder.mName.setText(entry.getParkingName());
         String taken = String.valueOf(entry.getTakenPlaces());
-        taken = taken + " taken places";
+        taken = taken;
         String free = String.valueOf(entry.getFreePlaces());
-        free = free + " free places";
+        free = free;
         holder.takenPlaces.setText(taken);
         holder.freePlaces.setText(free);
 

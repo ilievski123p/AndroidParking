@@ -5,8 +5,23 @@
     android:layout_height="match_parent"
     tools:context=".ConfirmReservation">
 
-    <!-- TODO: Update blank fragment layout -->
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="25dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/logoo"/>
     <TextView
+        android:id="@+id/textView2"
+        android:layout_below="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Parking Reservation"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:textSize="35dp" />    <TextView
         android:id="@+id/success_message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -18,25 +33,17 @@
         android:id="@+id/chosen_parking_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Successfully reserved a parking space!"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/success_message"/>
-
+        android:layout_below="@+id/textView2"/>
     <Button
         android:id="@+id/button_navigate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Navigate"
+        android:text="Open Google Maps for navigation"
         android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/chosen_parking_name"/>
 
-    <Button
-        android:id="@+id/button_open_map"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Open Map"
-        android:layout_marginTop="20dp"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/button_navigate"/>
 
 </RelativeLayout>

@@ -21,9 +21,6 @@ public class ParkingPlacesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.parking_places_activity);
         dateText = (TextView) findViewById(R.id.chosen_date_parking);
-        numberHours = (TextView) findViewById(R.id.number_of_hours);
-        cityName = (TextView) findViewById(R.id.city_name_parking_activity);
-
         Intent incoming = getIntent();
          City city = incoming.getParcelableExtra("city");
         int day = incoming.getIntExtra("day", 0);
@@ -35,16 +32,12 @@ public class ParkingPlacesActivity extends AppCompatActivity {
         assert city != null;
         String city_name = city.getName();
 
-        hours = hours + " hours";
-        date = "Reservation for " + date;
+        hours = hours;
+        date =date + " - " + hours + " in " + city_name;
 
         dateText.setText(date);
-        numberHours.setText(hours);
-        cityName.setText(city_name);
-
-
         //сетирање на RecyclerView контејнерот
-        mRecyclerView = (RecyclerView) findViewById(R.id.list);
+        mRecyclerView = (RecyclerView) findViewById(R.id.parking_recycler_view_list);
 
         // оваа карактеристика може да се користи ако се знае дека промените
         // во содржината нема да ја сменат layout големината на RecyclerView
