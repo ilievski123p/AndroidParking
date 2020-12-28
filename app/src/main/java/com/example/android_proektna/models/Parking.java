@@ -58,7 +58,7 @@ public class Parking implements Parcelable {
         return city;
     }
 
-    void reserveParking() {
+    public void reserveParking() {
         freePlaces--;
     }
 

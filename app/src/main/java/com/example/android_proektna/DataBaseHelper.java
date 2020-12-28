@@ -117,26 +117,23 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     {
         SQLiteDatabase db = this.getReadableDatabase();
         ArrayList<Parking> parking = new ArrayList<Parking>();
-        String query = String.format("SELECT * FROM Parking");
-        Cursor cursor = db.rawQuery(query, null);
+        Cursor cursor = db.rawQuery( "Select * from parking where city=?  ", new String[]{name});
         int i=0;
         if (cursor != null && cursor.moveToFirst()) {
             do {
-                if (cursor.getString(4).equals(name))
-                {
-                String p_name = cursor.getString(1);
-                int p_places = cursor.getInt(2);
-                int f_places = cursor.getInt(3);
-                String city = cursor.getString(4);
-                String lat = cursor.getString(5);
-                String lng = cursor.getString(6);
-                Parking pom = new Parking(p_name, p_places, f_places, city, lat,lng);
-                parking.add(i,pom);
-                i++;
-            }else {continue;}
+                    String p_name = cursor.getString(1);
+                    int p_places = cursor.getInt(2);
+                    int f_places = cursor.getInt(3);
+                    String city = cursor.getString(4);
+                    String lat = cursor.getString(5);
+                    String lng = cursor.getString(6);
+                    Parking pom = new Parking(p_name, p_places, f_places, city, lat, lng);
+                    parking.add(i, pom);
+                    i++;
             }
             while (cursor.moveToNext());
-            }
+            cursor.close();
+        }
         return parking;
     }
     public ArrayList<Reservation> getReservations(){

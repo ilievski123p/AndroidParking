@@ -74,6 +74,7 @@ public class ParkingPlaceAdapter extends RecyclerView.Adapter<ParkingPlaceAdapte
                 ContentValues newValues = new ContentValues();
                 // Assign values for each column.
                 //newValues.put("UserName",entry.)
+                entry.reserveParking();
                 newValues.put("CityName", entry.getCityName());
                 newValues.put("ParkingName", entry.getParkingName());
                 newValues.put("Hour", " ");
@@ -83,8 +84,6 @@ public class ParkingPlaceAdapter extends RecyclerView.Adapter<ParkingPlaceAdapte
                 db = dbHelper.getWritableDatabase();
                 long result=db.insert("myReservations", null, newValues);
                 System.out.print(result);
-                Toast.makeText(context, "Successfully Reserved", Toast.LENGTH_LONG).show();
-
                 Intent intent = new Intent(mContext, ConfirmReservation.class);
                 intent.putExtra("parking", myList.get(position));
                 mContext.startActivity(intent);

@@ -27,20 +27,10 @@ public class ParkingPlacesActivity extends AppCompatActivity {
         dateText = (TextView) findViewById(R.id.chosen_date_parking);
         Intent incoming = getIntent();
          City city = incoming.getParcelableExtra("city");
-        int day = incoming.getIntExtra("day", 0);
-        int month = incoming.getIntExtra("month", 0);
-        int year = incoming.getIntExtra("year", 0);
-        String hours = incoming.getStringExtra("hours");
-        String date = day + "/" + month + "/" + year;
-        assert city != null;
         String city_name = city.getName();
         ArrayList<Parking> parkings = new ArrayList<>();
         DataBaseHelper handler = new DataBaseHelper(ParkingPlacesActivity.this);
         parkings = handler.getParkings(city_name);
-        hours = hours;
-        date =date + " - " + hours + " in " + city_name;
-
-        dateText.setText(date);
         //сетирање на RecyclerView контејнерот
         mRecyclerView = (RecyclerView) findViewById(R.id.parking_recycler_view_list);
 
@@ -55,7 +45,7 @@ public class ParkingPlacesActivity extends AppCompatActivity {
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
         // сетирање на кориснички дефиниран адаптер myAdapter (посебна класа)
-         mAdapter = new ParkingPlaceAdapter(parkings, R.layout.parking_places_card_activity, this);
+        mAdapter = new ParkingPlaceAdapter(parkings, R.layout.parking_places_card_activity, this);
 
         //прикачување на адаптерот на RecyclerView
         mRecyclerView.setAdapter(mAdapter);

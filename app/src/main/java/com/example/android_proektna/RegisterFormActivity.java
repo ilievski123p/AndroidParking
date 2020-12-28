@@ -76,10 +76,6 @@ public class RegisterFormActivity extends AppCompatActivity implements AdapterVi
 
         proceed.setOnClickListener(v -> {
             Intent intent1 = new Intent(v.getContext(), ParkingPlacesActivity.class);
-            intent1.putExtra("day", mDay);
-            intent1.putExtra("month", mMonth);
-            intent1.putExtra("year", mYear);
-            intent1.putExtra("hours", mHours);
             intent1.putExtra("city", city);
             startActivity(intent1);
         });
